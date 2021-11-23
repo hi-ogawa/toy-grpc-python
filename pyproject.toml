@@ -1,0 +1,37 @@
+#
+# Poetry
+#
+
+[tool.poetry]
+name = "toy-grpc"
+version = "0.1.0"
+description = ""
+authors = ["Hiroshi Ogawa <hi.ogawa.zz@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+grpcio = "^1.42.0"
+grpcio-reflection = "^1.42.0"
+
+[tool.poetry.dev-dependencies]
+grpcio-tools = "^1.42.0"
+black = "^21.11b1"
+isort = "^5.10.1"
+mypy = "^0.910"
+pylint = "^2.11.1"
+mypy-protobuf = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+#
+# Tools
+#
+
+[tool.black]
+extend_exclude = "protobuf"
+
+[tool.isort]
+extend_skip_glob = "protobuf/**/*.py"
+profile = "black"
