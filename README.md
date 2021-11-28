@@ -77,7 +77,7 @@ PollerCompletionQueue._handle_events =>
 
 
 [Poller thread]
-PollerCompletionQueue._poll_wrapper => _poll =>
+PollerCompletionQueue._poll_wrapper => _poll (with nogil) =>
   (while loop)
   grpc_completion_queue_next(completion queue)
   queue.push(event)
